@@ -6,34 +6,34 @@ let wordbox = [];
 let gamedata = [
     {
 "level":1,
-"controllerword": ["E" , "A" , "P" , "T", "O", "Y", "U"],
-"winnerword":["EAT","PETA","TAP"],
+"controllerword": ["T" , "A" , "D" , "N", "O", "M", "P","G"],
+"winnerword":["DOG","MAN","TOP"],
 
 },
-{
-    "level":2,
-    "controllerword": ["E" , "A" , "N" , "D"],
-    "winnerword":["AND","DEAN","END"],
+// {
+    // "level":2,
+    // "controllerword": ["E" , "A" , "N" , "D"],
+    // "winnerword":["AND","DEAN","END"],
     
-    },
-    {
-        "level":3,
-        "controllerword": ["Y" , "T" , "N" , "E"],
-        "winnerword":["TEN","YET","NET"],
+    // },
+    // {
+    //     "level":3,
+    //     "controllerword": ["Y" , "T" , "N" , "E"],
+    //     "winnerword":["TEN","YET","NET"],
         
-        },
-        {
-            "level":4,
-            "controllerword": ["S" , "R" , "A" , "T"],
-            "winnerword":["RAT","STAR","SAT"],
+    //     },
+    //     {
+    //         "level":4,
+    //         "controllerword": ["S" , "R" , "A" , "T"],
+    //         "winnerword":["RAT","STAR","SAT"],
             
-            },
-            {
-                "level":5,
-                "controllerword": ["P" , "S" , "I" , "L", "O", "Y", "U"],
-                "winnerword":["LIPS","SLIP","SIP"],
+    //         },
+    //         {
+    //             "level":5,
+    //             "controllerword": ["P" , "S" , "I" , "L", "O", "Y", "U"],
+    //             "winnerword":["LIPS","SLIP","SIP"],
                 
-                }
+    //             }
 ];
 
 
@@ -48,6 +48,7 @@ function makeController(){
 
 makeController();
 makeboard();
+
 function makeboard(){
    
     let arr = [];
@@ -82,7 +83,7 @@ function getuserdata(index){
                             document.getElementById(`${e}`).innerHTML = wordbox[i-1][index+1].letter;
                             document.getElementById(`${e}`).style.color="gold";
                             document.getElementById(`${e}`).style.backgroundColor="#1C1B21";
-  document.getElementById(`${e}`).style.transition = "0.5s all ease-in-out";
+                            document.getElementById(`${e}`).style.transition = "0.5s all ease-in-out";
                         }
                    
                     });
@@ -93,8 +94,9 @@ function getuserdata(index){
         }
         else{
       
-         if(userdata.split('').length >4){
+         if(userdata.split('').length >3){
             userdata = "";
+            window.alert("Try Again")
          }
         }
         document.getElementById('msg').innerHTML = "Attempting :: ";
@@ -113,8 +115,8 @@ function checklevel(count){
         level = Number(level) + Number(1);
      
         completedcount = 0;
-        if(level >=5){
-            document.getElementById('wordplace').innerHTML = "CONGRATUTAIONS WINNER !!";
+        if(level >=1){
+            document.getElementById('wordplace').innerHTML = "CONGRATULATIONS WINNER !!";
         document.getElementById('wordplace').style.textAlign="center";
         document.getElementById('wordplace').style.marginTop="40px";
         document.getElementById('wordplace').style.fontSize="40px";
